@@ -73,6 +73,3 @@ gem 'rubocop-airbnb'
 gem 'pry-byebug'
 gem 'dotenv-rails'
 gem 'font-awesome-sass'
-
-
-
