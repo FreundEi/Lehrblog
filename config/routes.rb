@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'articles/index'
-  get 'articles/show'
-  get 'articles/new'
-  get 'articles/edit'
-  get 'articles/create'
-  get 'articles/update'
-  get 'articles/destroy'
-  get 'users/index'
-  get 'users/show'
+
+  root to: "homes#top"
+  get "homes/about"
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users
+  resources :articles
+  resources :article_comments
+  resources :favorites
+  resources :inqueries
 end
