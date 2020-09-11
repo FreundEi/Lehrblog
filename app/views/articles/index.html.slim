@@ -1,2 +1,5 @@
-h1 Articles#index
-p Find me in app/views/articles/index.html.slim
+h1 Blogs
+- @articles.each do |article|
+div article.title
+div @user.name
+

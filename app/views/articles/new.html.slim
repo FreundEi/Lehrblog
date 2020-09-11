@@ -1,2 +1,12 @@
-h1 Articles#new
-p Find me in app/views/articles/new.html.slim
+h1 New blog
+div.
+  = form_for(@article) do |f|
+    div.field
+      = f.label :title
+      = f.text_field :title
+    div.field
+      = f.label :body
+      = f.text_area :body
+    div.action
+     = f.submit "投稿", class: "btn btn-primary"
+  end
