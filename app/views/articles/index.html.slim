@@ -1,6 +1,7 @@
 h1 Blogs
 - @articles.each do |article|
   .article_box
+    div = attachment_image_tag article, :image, :fill, 50, 50
     div = article.title
     div = article.body
     = link_to "詳細", article_path(article)
