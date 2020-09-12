@@ -1,2 +1,8 @@
 h1 User detial
+div
+  = attachment_image_tag @user, :profile_image, :fill, 50, 50
+div
+  = @user.name
+div
+  = @user.introduction
 
