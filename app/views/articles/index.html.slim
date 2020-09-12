@@ -1,5 +1,7 @@
 h1 Blogs
 - @articles.each do |article|
-div article.title
-div @user.name
+  .article_box
+    div = article.title
+    div = article.body
+    = link_to "詳細", article_path(article)
 
