@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
-  resources :articles
-  resources :article_comments
-  resources :favorites
+  resources :articles do
+    resources :article_comments, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
+  end
   resources :inqueries
 end

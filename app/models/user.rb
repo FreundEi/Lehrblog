@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :articles, dependent: :destroy
   has_many :article_comments, dependent: :destroy
-  has_many :favorites. dependent: :destroy
+  has_many :favorites, dependent: :destroy
   has_many :inqueries, dependent: :destroy
 
 end

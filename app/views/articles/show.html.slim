@@ -11,3 +11,18 @@
     = link_to "編集", edit_article_path
   div
     = link_to "削除", article_path(@article), method: :delete, data: { confilm: "削除しますか？" }
+
+  / コメント一覧
+  table
+  - @article.article_comments.each do |article_comment|
+    tr
+      td = attachment_image_tag @article_article_comment, :profile_image, :fill, 30, 30
+      td = article_comment.comment
+      - if current_user.id == article_comment.user_id
+        td = link_to "削除", article_article_comment_path(@article.id, article_comment), method: :delete
+
+  / コメント投稿
+  div
+    = form_for [@article, @article_comment] do |f|
+      = f.text_area :comment
+      = f.submit "送信"
