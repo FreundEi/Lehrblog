@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :articles do
     resources :article_comments, only: [:create, :destroy]
-    resources :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
   resources :inqueries
 end

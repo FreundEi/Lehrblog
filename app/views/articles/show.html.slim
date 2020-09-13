@@ -1,5 +1,18 @@
 .row
   h1 Blog ditail
+
+  / お気に入り
+  - if @article.favorited_by?(current_user)
+    td
+      = link_to article_favorites_path(@article,@article.favorites), method: :delete do
+        i class="fas fa-star" aria-hidden="true" style="color: yellow;"
+      = @article.favorites.count
+  - else
+    td
+      = link_to article_favorites_path(@article), method: :post do
+        i class="far fa-star" aria-hidden="true" style="color: yellow;"
+      = @article.favorites.count
+
   div
     = attachment_image_tag @article, :image, :fill, 50, 50
   div
@@ -10,7 +23,7 @@
   div
     = link_to "編集", edit_article_path
   div
-    = link_to "削除", article_path(@article), method: :delete, data: { confilm: "削除しますか？" }
+    = link_to "削除", article_path(@article), method: :delete, data: { confirm: "削除しますか？" }
 
   / コメント一覧
   table
