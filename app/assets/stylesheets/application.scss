@@ -21,3 +21,16 @@
 /* bootstrap-sass用の記述*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+header {
+  color:white;
+}
+
+ul {
+  list-style: none;
+}
+
+.abc {
+  margin-top: 60px;
+}
