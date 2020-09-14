@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'inquiries/index'
+  get 'inquiries/confirm'
+  get 'inquiries/complete'
   root to: "homes#top"
   get "homes/about"
 
