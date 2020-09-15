@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'inquiries/index'
-  get 'inquiries/confirm'
-  get 'inquiries/complete'
+  # get 'inquiries/index'
+  # get 'inquiries/confirm'
+  # get 'inquiries/complete'
   root to: "homes#top"
   get "homes/about"
 
@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     resources :article_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
-  resources :inqueries
+  resources :inquiries
 end

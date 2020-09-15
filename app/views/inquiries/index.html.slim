@@ -1,2 +1,5 @@
 h1 Inquiries#index
-p Find me in app/views/inquiries/index.html.slim
+- @inquiries.each do |inquiry|
+  .inquiry_box
+    div = inquiry.name
+    div = inquiry.message
