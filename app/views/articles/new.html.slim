@@ -1,0 +1,20 @@
+h1 New blog
+
+.row
+
+  = form_for(@article) do |f|
+
+    .field
+      = f.label :image
+      = f.attachment_field :image
+
+    .field
+      = f.label :title
+      = f.text_field :title
+
+    .field
+      = f.label :body
+      = f.text_area :body
+
+    .action
+      = f.submit "投稿", class: "btn btn-primary"

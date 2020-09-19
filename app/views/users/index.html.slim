@@ -1,0 +1,18 @@
+h1 Users
+table class="table table-hover table-inverse"
+  thead
+    tr
+      th
+      th 名前
+      th 自己紹介
+      th お気に入り
+      th 投稿
+      th
+  tbody
+  - @users.each do |user|
+    tr
+      td = attachment_image_tag user, :profile_image, :fill, 50, 50
+      td = link_to user.name, user_path(user)
+      td = user.introduction
+      td お気に入り件数
+      td 投稿件数
