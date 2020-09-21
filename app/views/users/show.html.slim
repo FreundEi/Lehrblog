@@ -1,8 +1,10 @@
 h1 User detial
-div
+.profile-image
   = attachment_image_tag @user, :profile_image, :fill, 50, 50
-div
+.name
   = @user.name
-div
+.introduction
   = @user.introduction
+
+= link_to "編集", edit_user_path
 
