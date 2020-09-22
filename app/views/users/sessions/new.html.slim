@@ -15,4 +15,10 @@ h2
       = f.label :remember_me
   .actions
     = f.submit "Log in"
-= render "users/shared/links"
+
+  = render "users/shared/links"
+
+  .block
+  h3
+    | まだ登録していない場合はこちら
+  = link_to 'Sign up', new_user_registration_path
