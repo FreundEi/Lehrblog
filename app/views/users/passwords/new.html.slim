@@ -1,11 +1,11 @@
 h2
-  | Forgot your password?
+  | パスワードを忘れましたか?
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   = render "users/shared/error_messages", resource: resource
   .field
-    = f.label :email
+    = f.label :email, "メールアドレス"
     br
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .actions
-    = f.submit "Send me reset password instructions"
+    = f.submit "新しいパスワードを送信します"
 = render "users/shared/links"

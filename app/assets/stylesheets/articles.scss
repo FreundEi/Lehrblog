@@ -1,3 +1,83 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.article-box {
+  width: 100%;
+  height: 150px;
+  padding: 8px;
+  background-color: #eeeeee;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.article-image {
+  width: 65px;
+  height: 65px;
+  background-color: #dddddd;
+  padding: 0.1%;
+  float: left;
+}
+
+.article-title {
+  width: 50%;
+  height: 50%;
+  margin: 0.5px;
+  margin-left: 10px;
+  padding: 12px;
+  text-align: center;
+  font-size: 30px;
+  float: left;
+  background-color: #dedede;
+  border-radius: 10px;
+}
+
+.article-body {
+  width: 90%;
+  height: 50%;
+  padding: 10px 0;
+  font-size: 20px;
+  float: left;
+  border-radius: 10px;
+}
+
+.article-user {
+  width: 30%;
+  height: 50%;
+  margin: 0.5px;
+  margin-left: 10px;
+  float: left;
+  font-size: 20px;
+  background-color: #dedede;
+  border-radius: 10px;
+}
+
+.article-user-tag {
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.article-user-name {
+  text-align: center;
+}
+
+.article-comment-count {
+  font-size: 20px;
+  margin-left: 10px;
+  float: right;
+}
+
+.article-favorite-count {
+  font-size: 20px;
+  margin-left: 10px;
+  float: right;
+}
+
+.article-sesssion {
+  font-size: 15px;
+  margin-top: 30px;
+  margin-left: 10px;
+  float: right;
+}
+
+
