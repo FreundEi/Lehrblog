@@ -1,5 +1,5 @@
 .row
-  h1.body-title class="text-center" User ditile
+  h1.body-title class="text-center" Profile
 
   .profile-image
     = attachment_image_tag @user, :profile_image, :fill, 150, 150, fallback: "unnamed.jpg", size:"150x150"
@@ -10,9 +10,10 @@
   .introduction
     = @user.introduction
 
-  .session
-  = link_to "編集", edit_user_path
+  - if current_user.id == @user.id
+    .session
+    = link_to "編集", edit_user_path
 
-  .session
-  = link_to "新規投稿", new_article_path
+    .session
+    = link_to "新規投稿", new_article_path
 

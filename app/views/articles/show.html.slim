@@ -20,21 +20,21 @@
       = attachment_image_tag @article, :image, :fill, 500, 300
     .article-body
       = safe_join(@article.body.split("\n"),tag(:br))
+  - if current_user.id == @article.user_id
+    div
+      = link_to "編集", edit_article_path
+    div
+      = link_to "削除", article_path(@article), method: :delete, data: { confirm: "削除しますか？" }
 
-  div
-    = link_to "編集", edit_article_path
-  div
-    = link_to "削除", article_path(@article), method: :delete, data: { confirm: "削除しますか？" }
-
-  / コメント一覧
-  .comments-area
+/ コメント一覧
+.comments-area
   h3.body-title class="text-center" コメント
   - @article.article_comments.each do |article_comment|
     .comment-box
       .comment-image = attachment_image_tag @article_article_comment, :profile_image, :fill, 30, 30, fallback: "unnamed.jpg", size:"50x50"
       .comment-user = article_comment.user.name
       .comment = article_comment.comment
-      - if current_user.id == article_comment.user_id
+    - if current_user.id == article_comment.user_id
       .comment-delete
         = link_to "削除", article_article_comment_path(@article.id, article_comment), method: :delete
 
