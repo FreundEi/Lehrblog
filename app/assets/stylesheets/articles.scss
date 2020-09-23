@@ -1,6 +1,8 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index
 .article-box {
   width: 100%;
   height: 150px;
@@ -78,6 +80,68 @@
   margin-top: 30px;
   margin-left: 10px;
   float: right;
+}
+
+// show
+.favorite {
+  font-size: 20px;
+  text-align: right;
+}
+
+.image {
+  text-align: center;
+}
+
+.article-body {
+  font-size: 20px;
+}
+
+.comments-area {
+  margin-top: 10px;
+  border-top: 1px solid #dddddd;
+}
+
+.comment-box {
+  height: 70px;
+  margin-top: 2px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
+
+.comment-image {
+  float: left;
+}
+
+.comment-user {
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+  float: left;
+}
+
+.comment {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  float: left;
+}
+
+.comment-delete {
+  margin-top: 40px;
+  float: right;
+}
+
+.comment-form {
+  margin-top: 10px;
+}
+// new
+.field {
+  font-size: 15px;
+}
+
+.action {
+  text-align: center;
 }
 
 
