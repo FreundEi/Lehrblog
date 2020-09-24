@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :inqueries, dependent: :destroy
 
+  validates :name, length: { in: 1..20 }
 end
