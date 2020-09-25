@@ -14,23 +14,63 @@
  *= require_self
  */
 
-/*font-awesome-sass用の記述*/
+/* font-awesome-sass用の記述 */
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-/* bootstrap-sass用の記述*/
+/* bootstrap-sass用の記述 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+// ヘッダー
 header {
-  color:white;
+  color: black;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 35px;
+}
+
+.nav-item-left {
+  margin-top: 10px;
+}
+
+.nav-item-right {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+li {
+  margin-left: 20px;
 }
 
 ul {
   list-style: none;
 }
 
-.abc {
-  margin-top: 60px;
+// Body
+.notice {
+  text-align: center;
+}
+
+body {
+  padding-top: 70px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.field {
+  margin-top: 10px;
+}
+
+.paginat {
+  font-size: 25px;
+  text-align: center;
+}
+
+footer {
+  height: 50px;
 }

@@ -74,3 +74,7 @@ gem 'rubocop-airbnb'
 gem 'pry-byebug'
 gem 'dotenv-rails'
 gem 'font-awesome-sass'
+
+group :production do
+  gem 'mysql2'
+end

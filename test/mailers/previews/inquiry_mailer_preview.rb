@@ -2,9 +2,9 @@
 class InquiryMailerPreview < ActionMailer::Preview
 
   def inquiry
-    inquiry = Inquiry.new(name: "山田太郎", message: "問い合わせメッセージ")
+    # inquiry = Inquiry.new(name: "山田太郎", message: "問い合わせメッセージ")
 
-    InquiryMailer.received_email(inquiry).deliver_now
+    # InquiryMailer.received_email(inquiry).deliver_now
   end
 
 end
