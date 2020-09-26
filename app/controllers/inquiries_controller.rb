@@ -13,7 +13,7 @@ class InquiriesController < ApplicationController
       InquiryMailer.received_email(@inquiry).deliver
       redirect_to new_inquiry_path, notice: "送信しました"
     else
-      redirect_to new_contact_path, notice: "入力内容に誤りがあります"
+      redirect_to new_inquiry_path, notice: "入力内容に誤りがあります"
     end
   end
 
