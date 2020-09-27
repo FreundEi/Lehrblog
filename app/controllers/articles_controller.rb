@@ -10,9 +10,9 @@ class ArticlesController < ApplicationController
     @article_comment = ArticleComment.new
   end
 
-  # def bookmark
-  #   @articles = Article.where(favorite_id: 1).page(params[:page]).per(8)
-  # end
+  def posted
+    @articles = Article.all.where(user_id: current_user.id).page(params[:page]).per(8)
+  end
 
   def new
     @article = Article.new
