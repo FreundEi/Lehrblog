@@ -11,8 +11,12 @@ class ArticlesController < ApplicationController
   end
 
   def posted
-    @articles = Article.all.where(user_id: current_user.id).page(params[:page]).per(8)
+    @articles = Article.where(user_id: current_user.id).page(params[:page]).per(8)
   end
+
+  # def bookmark
+  #   @articles = Article.where(   ).page(params[:page]).per(8)
+  # end
 
   def new
     @article = Article.new
