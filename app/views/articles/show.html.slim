@@ -3,28 +3,31 @@
 
   / お気に入り
   .favorite
-    - if @article.favorited_by?(current_user)
-      td
-        = link_to article_favorites_path(@article,@article.favorites), method: :delete do
-          i class="fas fa-star" aria-hidden="true" style="color: yellow;"
-        |  
-        = @article.favorites.count
-    - else
-      td
-        = link_to article_favorites_path(@article), method: :post do
-          i class="far fa-star" aria-hidden="true" style="color: yellow;"
-        |  
-        = @article.favorites.count
+    - if user_id = nil
+      - if @article.favorited_by?(current_user)
+        td
+          = link_to article_favorites_path(@article,@article.favorites), method: :delete do
+            i class="fas fa-star" aria-hidden="true" style="color: yellow;"
+          |  
+          = @article.favorites.count
+      - else
+        td
+          = link_to article_favorites_path(@article), method: :post do
+            i class="far fa-star" aria-hidden="true" style="color: yellow;"
+          |  
+          = @article.favorites.count
   .col-xs-12
     .image
       = attachment_image_tag @article, :image, :fill, 500, 300
     .article-body
       = safe_join(@article.body.split("\n"),tag(:br))
-  - if current_user.id == @article.user_id
-    div
-      = link_to "編集", edit_article_path
-    div
-      = link_to "削除", article_path(@article), method: :delete, data: { confirm: "削除しますか？" }
+
+  - if user_id = nil
+    - if current_user.id == @article.user_id
+      div
+        = link_to "編集", edit_article_path
+      div
+        = link_to "削除", article_path(@article), method: :delete, data: { confirm: "削除しますか？" }
 
 / コメント一覧
 .comments-area
@@ -34,13 +37,16 @@
       .comment-image = attachment_image_tag @article_article_comment, :profile_image, :fill, 30, 30, fallback: "unnamed.jpg", size:"50x50"
       .comment-user = article_comment.user.name
       .comment = article_comment.comment
-    - if current_user.id == article_comment.user_id
-      .comment-delete
-        = link_to "削除", article_article_comment_path(@article.id, article_comment), method: :delete
+
+    - if user_id = nil
+      - if current_user.id == article_comment.user_id
+        .comment-delete
+          = link_to "削除", article_article_comment_path(@article.id, article_comment), method: :delete
 
   / コメント投稿
-  .comment-form
-    = form_for [@article, @article_comment] do |f|
-      = f.text_area :comment
-      = f.submit "送信"
+  - if user_id = nil
+    .comment-form
+      = form_for [@article, @article_comment] do |f|
+        = f.text_area :comment
+        = f.submit "送信"
 
