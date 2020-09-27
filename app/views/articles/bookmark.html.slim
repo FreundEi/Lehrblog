@@ -1,0 +1,35 @@
+h1.body-title class="text-center" Bookmark
+.row
+  - @articles.each do |article|
+    .article-box
+      .article-image
+        .image
+          = attachment_image_tag article, :image, :fill, 65, 65
+
+      .article-title
+        = article.title.truncate(11)
+
+      .article-user
+        .article-user-tag
+          | 投稿者
+        .article-user-name
+          = article.user.name
+
+      .article-comment-count
+        i class="fas fa-comment-dots"
+        |  
+        = article.article_comments.count
+
+      .article-favorite-count
+        i class="fas fa-star"
+        |  
+        = article.favorites.count
+
+      .article-body
+        = article.body.truncate(100)
+
+      .article-sesssion
+        = link_to "詳細", article_path(article),class:"btn btn-default"
+
+.paginat
+  = paginate @articles

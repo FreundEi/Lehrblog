@@ -10,6 +10,10 @@ class ArticlesController < ApplicationController
     @article_comment = ArticleComment.new
   end
 
+  # def bookmark
+  #   @articles = Article.where(favorite_id: 1).page(params[:page]).per(8)
+  # end
+
   def new
     @article = Article.new
   end
@@ -35,7 +39,7 @@ class ArticlesController < ApplicationController
     user = current_user
     if article.update(article_params)
       redirect_to article_path(article), notice: "編集内容を保存しました"
-    else
+    elseo
       redirect_to edit_article_path(article), notice: "編集内容に誤りがあります"
     end
   end
