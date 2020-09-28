@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   def index
     @articles = Article.page(params[:page]).per(6)
@@ -9,6 +9,14 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article_comment = ArticleComment.new
   end
+
+  def posted
+    @articles = Article.where(user_id: current_user.id).page(params[:page]).per(8)
+  end
+
+  # def bookmark
+  #   @articles = Article.where(   ).page(params[:page]).per(8)
+  # end
 
   def new
     @article = Article.new
@@ -35,7 +43,7 @@ class ArticlesController < ApplicationController
     user = current_user
     if article.update(article_params)
       redirect_to article_path(article), notice: "編集内容を保存しました"
-    else
+    elseo
       redirect_to edit_article_path(article), notice: "編集内容に誤りがあります"
     end
   end
