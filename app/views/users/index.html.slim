@@ -13,9 +13,6 @@ table class="table table-hover table-inverse"
     tr
       td = attachment_image_tag user, :profile_image, :fill, 50, 50, fallback: "unnamed.jpg", size:"50x50"
       td = link_to user.name, user_path(user)
-      - if user.introduction.empty?
-        td
-      - else
-        td = user.introduction.truncate(20)
+      td = user.introduction
       td = user.favorites.count
       td = user.articles.count
